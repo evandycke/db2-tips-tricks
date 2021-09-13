@@ -10,8 +10,9 @@ Some Tips and Tricks about DB2.
 
 ### Data lifecycle
 
-* Column search
-* Create table from DB2 structure
+* [Column search](./scripts/column-search.sql)
+* [Create table from DB2 structure](./scripts/create-table-from-db2-structure.sql)
+* [Count columns per table](./scripts/count-columns-per-table.sql)
 
 ## Build with
 
