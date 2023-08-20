@@ -1,0 +1,15 @@
+-- Recherche d'une colonne dans les tables système
+SELECT 
+    SYSTEM_TABLE_SCHEMA,
+    SYSTEM_TABLE_NAME,
+    SYSTEM_COLUMN_NAME,
+    COLUMN_TEXT,
+    DATA_TYPE,
+    LENGTH
+FROM 
+    QSYS2.SYSCOLUMNS
+WHERE
+    (1=1)
+    AND UPPER(COLUMN_NAME) LIKE '%MUTCA%'
+ORDER BY  
+    1 ASC, 2 ASC, 3 ASC;
