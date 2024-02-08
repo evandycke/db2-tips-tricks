@@ -1,0 +1,46 @@
+-- Génération des tables
+/*SELECT 
+	t.SYSTEM_TABLE_NAME  AS tablename,
+ 	CASE 
+ 		WHEN t.TABLE_TYPE IN ('V') THEN 'View'
+ 		WHEN t.TABLE_TYPE IN ('T','P') THEN 'Table'
+ 	END AS tabletype,
+ 	t.TABLE_SCHEMA AS SCHEMA,
+ 	t.TABLE_TEXT  AS technicalcomments
+FROM 
+ 	QSYS2.SYSTABLES T
+WHERE 
+ 	(1=1)
+ 	AND t.TABLE_TYPE  IN ('V','T','P')
+ 	AND t.TABLE_SCHEMA  = 'IKGLFIC'
+ORDER BY
+	1,2,3,4;*/
+ 
+-- Génération des colonnes
+/*SELECT	
+ 	c.TABLE_NAME AS tablename,
+ 	CASE 
+ 		WHEN t.TABLE_TYPE IN ('V') THEN 'View'
+ 		WHEN t.TABLE_TYPE IN ('T','P') THEN 'Table'
+ 	END AS tabletype,
+ 	c.TABLE_SCHEMA  AS tableschema,
+ 	CASE 
+ 		WHEN c.DATA_TYPE IN ('CHAR') THEN c.DATA_TYPE CONCAT '(' CONCAT c.LENGTH CONCAT ')'
+ 		WHEN c.DATA_TYPE IN ('DECIMAL','NUMERIC') THEN c.DATA_TYPE CONCAT '(' CONCAT c.LENGTH CONCAT ',' CONCAT c.NUMERIC_SCALE CONCAT ')'
+ 		ELSE 'N/A'
+ 	END AS datatype,
+ 	CASE
+ 		WHEN c.IS_NULLABLE = 'N' THEN 0 ELSE 1 
+ 	END AS ismandatory,
+ 	c.ORDINAL_POSITION AS ORDER,
+ 	c.COLUMN_TEXT AS technicalcomments
+FROM 
+ 	QSYS2.SYSCOLUMNS c
+INNER JOIN
+	QSYS2.SYSTABLES T
+	ON T.TABLE_SCHEMA = c.TABLE_SCHEMA
+	AND T.TABLE_NAME = c.TABLE_NAME
+WHERE 
+ 	(1=1)
+ 	AND t.TABLE_TYPE  IN ('V','T','P')
+ 	AND c.TABLE_SCHEMA = 'IKGLFIC';*/
