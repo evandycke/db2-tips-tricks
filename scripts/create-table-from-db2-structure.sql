@@ -1,7 +1,7 @@
 -- Génère une ordre CREATE pour SQL Server à partir des tables systèmes
 SELECT CREATE_ORDER
 FROM (
-        SELECT 0 AS ORDRE ,'CREATE TABLE ' || UPPER('MATABLE') ||'(' AS CREATE_ORDER
+        SELECT 0 AS ORDRE ,'CREATE TABLE DHB_ACQ.IKO_' || UPPER('MATABLE') ||'(' AS CREATE_ORDER
         FROM SYSIBM.SYSDUMMY1
     UNION ALL
         SELECT ORDINAL_POSITION AS ORDRE, '    ' || UPPER(COLUMN_NAME) || '    ' 
